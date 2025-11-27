@@ -1,4 +1,4 @@
-# Ansible Execution Environment Definition File: Getting Started Guide
+# Ansible Execution Environment Defin1ition File: Getting Started Guide
 
 This file tells how to build your defined **execution environment (EE)** using **Ansible Builder** (the tool used to build EEs). An **EE** is a container image that bundles all the tools and collections your automation needs to run consistently.
 
