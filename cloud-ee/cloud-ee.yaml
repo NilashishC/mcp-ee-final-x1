@@ -1,0 +1,24 @@
+---
+version: 3
+
+images:
+  base_image:
+    name: 'registry.redhat.io/ansible-automation-platform/ee-minimal-rhel8:2.18'
+
+dependencies:
+  galaxy:
+    collections:
+      - name: amazon.aws
+      - name: amazon.ai
+      - name: azure.azcollection
+      - name: google.cloud
+
+additional_build_files:
+  - src: ./ansible.cfg
+    dest: configs
+
+additional_build_steps:
+  prepend_base:
+    - COPY _build/configs/ansible.cfg /etc/ansible/ansible.cfg
+  append_final:
+    - RUN rm -f /etc/ansible/ansible.cfg
